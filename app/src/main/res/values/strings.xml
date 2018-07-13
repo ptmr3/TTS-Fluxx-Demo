@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TTS Fluxx Demo</string>
+    <string name="string_to_speak_input">What would you like to say?</string>
+    <string name="speak_button_text">Press to speak</string>
+</resources>
