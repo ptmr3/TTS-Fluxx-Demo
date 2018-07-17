@@ -4,7 +4,7 @@ import android.speech.tts.TextToSpeech
 import com.ptmr3.fluxx.Fluxx
 import com.ptmr3.fluxx.FluxxAction
 import com.ptmr3.fluxx.FluxxStore
-import com.ptmr3.fluxxap.Action
+import com.ptmr3.fluxx.annotation.Action
 import com.ptmr3.ttsfluxxdemo.action.ActionDataKeys.ACTION_SUCCESS_KEY
 import com.ptmr3.ttsfluxxdemo.action.ActionDataKeys.STRING_TO_SPEAK_KEY
 import com.ptmr3.ttsfluxxdemo.action.ActionDataKeys.TTS_INIT_STATUS_KEY

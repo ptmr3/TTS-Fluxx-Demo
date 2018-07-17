@@ -5,7 +5,7 @@ import android.util.Log
 import android.widget.Toast
 import com.ptmr3.fluxx.FluxxReaction
 import com.ptmr3.fluxx.FluxxActionCaller
-import com.ptmr3.fluxxap.Reaction
+import com.ptmr3.fluxx.annotation.Reaction
 import com.ptmr3.ttsfluxxdemo.R
 import com.ptmr3.ttsfluxxdemo.action.ActionDataKeys.ACTION_SUCCESS_KEY
 import com.ptmr3.ttsfluxxdemo.action.TtsActions.Companion.INITIALIZE_TTS
