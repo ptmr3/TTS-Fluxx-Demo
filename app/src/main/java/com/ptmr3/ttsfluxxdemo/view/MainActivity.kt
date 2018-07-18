@@ -38,7 +38,7 @@ class MainActivity : DaggerAppCompatActivity(), FluxxActionCaller {
     }
 
     @Reaction(INITIALIZE_TTS)
-    fun enableButtonUponItialization(reaction: FluxxReaction) {
+    fun enableButtonUponInitialization(reaction: FluxxReaction) {
         when (reaction.get<Boolean>(ACTION_SUCCESS_KEY)) {
             true -> speakButton.isEnabled = true
         }
