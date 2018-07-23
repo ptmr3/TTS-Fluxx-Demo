@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 class TtsActionsCreator
 @Inject
-constructor(fluxx: Fluxx): FluxxActionCreator(fluxx), TtsActions, TextToSpeech.OnInitListener {
+constructor(): FluxxActionCreator(), TtsActions, TextToSpeech.OnInitListener {
     override fun speakText(string: String) {
         publishAction(SPEAK_TEXT, STRING_TO_SPEAK_KEY, string)
     }

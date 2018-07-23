@@ -1,7 +1,6 @@
 package com.ptmr3.ttsfluxxdemo.store
 
 import android.speech.tts.TextToSpeech
-import com.ptmr3.fluxx.Fluxx
 import com.ptmr3.fluxx.FluxxAction
 import com.ptmr3.fluxx.FluxxStore
 import com.ptmr3.fluxx.annotation.Action
@@ -15,7 +14,7 @@ import javax.inject.Inject
 
 class TtsStore
 @Inject
-constructor(fluxx: Fluxx, private val mTextToSpeech: TextToSpeech) : FluxxStore(fluxx) {
+constructor(private val mTextToSpeech: TextToSpeech) : FluxxStore() {
 
     @Action(actionType = INITIALIZE_TTS)
     fun onInit(action: FluxxAction) {
