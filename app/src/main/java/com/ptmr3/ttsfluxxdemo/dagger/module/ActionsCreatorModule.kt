@@ -1,6 +1,5 @@
 package com.ptmr3.ttsfluxxdemo.dagger.module
 
-import com.ptmr3.fluxx.Fluxx
 import com.ptmr3.ttsfluxxdemo.action.creator.TtsActionsCreator
 import dagger.Module
 import dagger.Provides
@@ -10,5 +9,5 @@ import javax.inject.Singleton
 class ActionsCreatorModule {
     @Singleton
     @Provides
-    fun providesAppActionCreator(fluxx: Fluxx) = TtsActionsCreator(fluxx)
+    fun providesAppActionCreator() = TtsActionsCreator()
 }
