@@ -1,7 +1,6 @@
 package com.ptmr3.ttsfluxxdemo.action.creator
 
 import android.speech.tts.TextToSpeech
-import com.ptmr3.fluxx.Fluxx
 import com.ptmr3.fluxx.FluxxActionCreator
 import com.ptmr3.ttsfluxxdemo.action.ActionDataKeys.STRING_TO_SPEAK_KEY
 import com.ptmr3.ttsfluxxdemo.action.ActionDataKeys.TTS_INIT_STATUS_KEY
