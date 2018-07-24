@@ -20,6 +20,7 @@ import javax.inject.Inject
 
 class MainActivity : DaggerAppCompatActivity(), FluxxReactionSubscriber {
     @Inject lateinit var ttsActionsCreator: TtsActionsCreator
+    // Instantiating Store here... need a better solution
     @Inject lateinit var ttsStore: TtsStore
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,13 +46,16 @@ class MainActivity : DaggerAppCompatActivity(), FluxxReactionSubscriber {
     @Reaction(INITIALIZE_TTS)
     fun enableButtonUponInitialization(reaction: FluxxReaction) {
         when (reaction.get<Boolean>(ACTION_SUCCESS_KEY)) {
-            true -> speakButton.isEnabled = true
+            true -> {
+                speakButton.isEnabled = true
+                speakButton.text = resources.getString(R.string.speak_button_text)
+            }
         }
     }
 
     @Reaction(SPEAK_TEXT)
     fun logSuccess() {
-        Log.i(TAG, "speak")
+        Log.i(TAG, "speak: " + Thread.currentThread().name)
     }
 
     companion object {

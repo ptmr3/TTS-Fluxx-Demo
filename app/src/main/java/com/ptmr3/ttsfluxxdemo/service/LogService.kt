@@ -3,7 +3,6 @@ package com.ptmr3.ttsfluxxdemo.service
 import android.content.Intent
 import android.os.IBinder
 import android.util.Log
-import com.ptmr3.fluxx.FluxxReaction
 import com.ptmr3.fluxx.FluxxReactionSubscriber
 import com.ptmr3.fluxx.annotation.Reaction
 import com.ptmr3.ttsfluxxdemo.action.TtsActions
@@ -24,12 +23,12 @@ class LogService : DaggerService(), FluxxReactionSubscriber {
     }
 
     @Reaction(TtsActions.INITIALIZE_TTS)
-    fun enableButtonUponInialization(reaction: FluxxReaction) {
+    fun enableButtonUponInitialization() {
         Log.i("SERVICE", "INITIALIZE_TTS")
     }
 
     @Reaction(TtsActions.SPEAK_TEXT)
-    fun logSuccess(reaction: FluxxReaction) {
+    fun logSuccess() {
         Log.i("SERVICE", "SPEAK_TEXT")
     }
 }
