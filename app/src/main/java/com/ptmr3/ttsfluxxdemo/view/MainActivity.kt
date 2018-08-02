@@ -2,6 +2,8 @@ package com.ptmr3.ttsfluxxdemo.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.speech.tts.TextToSpeech
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Toast
 import com.ptmr3.fluxx.FluxxReaction
@@ -14,17 +16,21 @@ import com.ptmr3.ttsfluxxdemo.action.TtsActions.Companion.SPEAK_TEXT
 import com.ptmr3.ttsfluxxdemo.action.creator.TtsActionsCreator
 import com.ptmr3.ttsfluxxdemo.service.LogService
 import com.ptmr3.ttsfluxxdemo.store.TtsStore
-import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import javax.inject.Inject
+import org.koin.android.ext.android.inject
 
-class MainActivity : DaggerAppCompatActivity(), FluxxReactionSubscriber {
-    @Inject lateinit var ttsActionsCreator: TtsActionsCreator
+class MainActivity : AppCompatActivity(), FluxxReactionSubscriber {
+    val ttsActionsCreator: TtsActionsCreator by inject()
     // Instantiating Store here... need a better solution
-    @Inject lateinit var ttsStore: TtsStore
+    val ttsStore: TtsStore by inject()
+    val ttsEngine : TextToSpeech by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // needed to activate instances until new version of koin comes out
+        ttsActionsCreator.toString()
+        ttsStore.toString()
+        ttsEngine.toString()
         registerReactionSubscriber(this)
         setContentView(R.layout.activity_main)
         startService(Intent(this, LogService::class.java))
