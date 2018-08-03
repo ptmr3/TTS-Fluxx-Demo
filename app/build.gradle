@@ -28,7 +28,7 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     implementation 'com.github.ptmr3:fluxx:1.0.7'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'org.koin:koin-android:0.9.3'
+    implementation 'org.koin:koin-android:1.0.0-beta-3'
     annotationProcessor 'com.github.ptmr3:fluxxap:1.0.5'
     kapt 'com.github.ptmr3:fluxxap:1.0.5'
     testImplementation 'junit:junit:4.12'
