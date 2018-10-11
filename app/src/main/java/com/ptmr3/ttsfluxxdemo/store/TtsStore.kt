@@ -10,12 +10,8 @@ import com.ptmr3.ttsfluxxdemo.action.ActionDataKeys.TTS_INIT_STATUS_KEY
 import com.ptmr3.ttsfluxxdemo.action.TtsActions.Companion.INITIALIZE_TTS
 import com.ptmr3.ttsfluxxdemo.action.TtsActions.Companion.SPEAK_TEXT
 import java.util.*
-import javax.inject.Inject
 
-class TtsStore
-@Inject
-constructor(private val mTextToSpeech: TextToSpeech) : FluxxStore() {
-
+class TtsStore(private val mTextToSpeech: TextToSpeech) : FluxxStore() {
     @Action(actionType = INITIALIZE_TTS)
     fun onInit(action: FluxxAction) {
         val status: Int = action[TTS_INIT_STATUS_KEY]
