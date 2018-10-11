@@ -1,1 +1,1 @@
-include ':app', ':fluxx', ':fluxxap'
+include ':app'

@@ -1,14 +1,15 @@
 package com.ptmr3.ttsfluxxdemo.service
 
+import android.app.Service
 import android.content.Intent
 import android.os.IBinder
 import android.util.Log
 import com.ptmr3.fluxx.FluxxReactionSubscriber
 import com.ptmr3.fluxx.annotation.Reaction
-import com.ptmr3.ttsfluxxdemo.action.TtsActions
-import dagger.android.DaggerService
+import com.ptmr3.ttsfluxxdemo.action.TtsActions.Companion.INITIALIZE_TTS
+import com.ptmr3.ttsfluxxdemo.action.TtsActions.Companion.SPEAK_TEXT
 
-class LogService : DaggerService(), FluxxReactionSubscriber {
+class LogService : Service(), FluxxReactionSubscriber {
 
     override fun onBind(p0: Intent?): IBinder? = null
 
@@ -22,12 +23,12 @@ class LogService : DaggerService(), FluxxReactionSubscriber {
         super.onDestroy()
     }
 
-    @Reaction(TtsActions.INITIALIZE_TTS)
+    @Reaction(INITIALIZE_TTS)
     fun enableButtonUponInitialization() {
         Log.i("SERVICE", "INITIALIZE_TTS")
     }
 
-    @Reaction(TtsActions.SPEAK_TEXT)
+    @Reaction(SPEAK_TEXT)
     fun logSuccess() {
         Log.i("SERVICE", "SPEAK_TEXT")
     }
