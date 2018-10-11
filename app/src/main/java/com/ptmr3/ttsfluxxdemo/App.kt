@@ -1,14 +1,19 @@
 package com.ptmr3.ttsfluxxdemo
 
 import android.app.Application
-import com.ptmr3.ttsfluxxdemo.di.Modules
+import com.ptmr3.ttsfluxxdemo.injection.Modules
 import org.koin.android.ext.android.startKoin
 
+/**
+ * This class is the first stop in the application lifecycle. This class handles global, one-time
+ * setup
+ */
 class App : Application() {
-    private val mModules = Modules(applicationContext)
-
+    /**
+     * * Initializes Koin D.I using the list of modules from Modules class
+     */
     override fun onCreate() {
         super.onCreate()
-        startKoin(this, mModules.modules)
+        startKoin(applicationContext, Modules.instance(this).modules)
     }
 }
